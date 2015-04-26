@@ -6,7 +6,7 @@ I was able to follow the README in the directory that explained what the analysi
 
 # Script run_analysis.R
 
-# Backgroud
+## Backgroud
 
 This script will take data on a subdirectory named SamsungData and perform some tasks due to obtain a tidy data set with the average of each variable for each activity and each subject.
 
@@ -15,16 +15,16 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 And a full description of how this data was collected can be obtained on this website: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-# How this script work
+## How this script work
 
 This scrip were buil in three parts.
 
-## Part A
+### Part A
 
 
 
 
-# Important Note
+## Important Note
 
 In order to this script work properly, you should:
 * install the "reshape2" package.
