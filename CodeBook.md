@@ -49,4 +49,4 @@ And a full description of how this data was collected can be obtained on this we
 
 ## Main Units
 * all variables corresponding to acceleration signal, the ones containing "acc", are measured in standard gravity units 'g'.
-* all variables corresponding to angular velocity vector measured by the gyroscope, the ones containing "gyro", are measured  for in radians/second. 
+* all variables corresponding to angular velocity vector measured by the gyroscope, the ones containing "gyro", are measured in radians/second. 
