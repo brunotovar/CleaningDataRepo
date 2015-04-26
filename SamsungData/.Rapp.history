@@ -1,0 +1,567 @@
+TrainingSetLocation = "./train/X_train.txt"#
+
+TrainingSetLocation#
+
+TrainingSet <- read.table (TrainingSetLocation, col.names= ColumnNames)#
+
+TrainingSet <- read.table (TrainingSetLocation)#
+
+ncol(TrainingSet)#
+
+ncol(VariableNames)#
+
+ncol(ColumnNames)#
+#
+
+nrow(ColumnNames)#
+
+ColumnNames <- read.table (ColumnNamesLocation, col.names=c("VariableName"))#
+
+ColumnNames <- read.table (ColumnNamesLocation, col.names="VariableName",colClasses=c("NULL","character"))#
+
+ColumnNames <- read.table (ColumnNamesLocation, colClasses=c("NULL","character"))#
+
+head(ColumnNames)#
+
+ColumnNames <- read.table (ColumnNamesLocation, colClasses=c("NULL","character"),col.names="VariableName")#
+
+ColumnNames <- read.table (ColumnNamesLocation, colClasses=c("NULL","character"),col.names=c("index","VariableName"))#
+
+head(ColumnNames)#
+
+ncol(ColumnNames)#
+
+ColumnNames <- read.table (ColumnNamesLocation, col.names=c("index","VariableName"),colClasses=c("NULL","character"))#
+
+ncol(ColumnNames)#
+
+nrow(ColumnNames)#
+
+ncol(TrainingSet)#
+
+TrainingSet <- read.table (TrainingSetLocation, col.names=ColumnNames)#
+
+class(ColumnNames)#
+
+ColumnNames[,1]#
+
+TrainingSet <- read.table (TrainingSetLocation, col.names=ColumnNames[,1])#
+
+head(TrainingSet)#
+
+TestSetLocation = "./test/X_test.txt"#
+
+TestSet <- read.table (TestSetLocation, col.names=ColumnNames[,1])           #
+
+head(TestSet)#
+#
+
+?rep#
+
+TrainingSet$partitionVar <- rep("training",nrow(TrainingSet))#
+
+head(TrainingSet)#
+
+tail(TrainingSet)#
+
+TestSet$partitionVar <- rep("test",nrow(TestSet))#
+
+tail(TestSet)#
+#
+
+head(TestSet)#
+#
+#
+
+SubjectTrainLocation ="./train/subject_train.txt"#
+
+SubjectTrain <- read.table (SubjectTrainLocation)#
+
+head(SubjectTrain)#
+
+nrow(SubjectTrain)#
+
+nrow(TraningSet)#
+
+nrow(TrainingSet)#
+#
+
+class(SubjectTrain)#
+
+class(SubjectTrain)#
+#
+
+SubjectTrain[,1]#
+
+ls()#
+
+memory.size()#
+
+object.size("ColumnNames")#
+
+object.size("SubjectTrain")#
+#
+
+object.size("TrainingSet")#
+
+?rm()#
+
+SubjectTrainLocation ="./train/subject_train.txt"#
+
+SubjectTrain <- read.table (SubjectTrainLocation)#
+
+SubjectTrainingLocation ="./train/subject_train.txt"#
+
+SubjectTraining <- read.table (SubjectTrainingLocation)#
+
+TrainingSet$subject <- SubjectTraining[,1]#
+
+head(TrainingSet)#
+
+tail(TrainingSet)#
+#
+
+SubjectTestLocation ="./test/subject_test.txt"#
+
+SubjectTest <- read.table (SubjectTestLocation)#
+
+TestSet$subject <- SubjectTest[,1]#
+
+head(TestSet)#
+
+tail(TestSet)#
+
+names(TrainingSet)#
+
+LabelTrainingLocation ="./train/y_train.txt"#
+
+LabelTraining <- read.table (LabelTrainingLocation)#
+
+LabelTraining[,1]#
+
+TrainingSet$activity.label <- LabelTraining[,1]#
+
+tail(TrainingSet)#
+
+LabelTestLocation ="./test/y_test.txt"  #
+
+LabelTest <- read.table (LabelTestLocation)#
+
+TestSet$activity.label <- LabelTest[,1]#
+
+?merge#
+
+intersect(names(TrainingSet),names(TestSet))#
+
+intersect(names(TrainingSet),names(TestSet))==3#
+
+count(intersect(names(TrainingSet),names(TestSet)))#
+
+intersect(names(TrainingSet),names(TestSet))=intersect(names(TrainingSet),names(TestSet))#
+
+intersect(names(TrainingSet),names(TestSet))==intersect(names(TrainingSet),names(TestSet))#
+#
+
+sum(intersect(names(TrainingSet),names(TestSet))==intersect(names(TrainingSet),names(TestSet)))#
+
+sum(intersect(names(TrainingSet),names(TestSet))==intersect(names(TrainingSet),names(TestSet)))==ncol(TrainingSet)#
+
+sum(intersect(names(TrainingSet),names(TestSet))==intersect(names(TrainingSet),names(TestSet)))==ncol(TestSet)#
+#
+
+nrow(TrainingSet)#
+
+nrow(TestSet)#
+
+7352+2947#
+
+MergedSet <- merge(TrainingSet,TestSet)#
+
+?object.size#
+
+object.size(TraningSet)#
+#
+
+object.size(TrainingSet)#
+#
+#
+
+?which#
+
+which(names(MergedSet) %in% c("mean","std"))#
+
+!which(names(MergedSet) %in% c("mean","std"))#
+#
+
+names(MergedSet)#
+
+names(MergedSet) %in% c("mean","std")#
+
+names(MergedSet) %in% c("mean","partionVar")#
+#
+
+names(MergedSet) %in% c("mean","partitionVar")#
+#
+#
+
+?grep#
+
+grep("mean";names(MergedSet))#
+
+grep("mean",names(MergedSet))#
+#
+
+df <- [, grep("mean",names(MergedSet))]#
+
+df <- MergedSet[, grep("mean",names(MergedSet))]#
+#
+
+names(df)#
+
+df <- MergedSet[, grep(c("mean","std",names(MergedSet))]#
+#
+#
+
+df <- MergedSet[, grep(c("mean","std"),names(MergedSet))]#
+#
+#
+#
+
+names(df)#
+
+df <- MergedSet[, grep(c("mean","std"),names(MergedSet))]#
+
+df <- MergedSet[, grep("mean"|"std",names(MergedSet))]#
+#
+
+df <- MergedSet[, grep("mean"&"std",names(MergedSet))]#
+#
+#
+
+df <- MergedSet[, grep("std",names(MergedSet))]#
+#
+#
+#
+
+names(df)#
+
+df <- MergedSet[, grep("std",names(MergedSet), ignore.case=TRUE)]#
+#
+#
+#
+#
+
+names(df)#
+#
+
+df <- MergedSet[, grep("mean",names(MergedSet), ignore.case=TRUE)]#
+#
+#
+#
+#
+#
+
+names(df)#
+#
+#
+
+df <- MergedSet[, grep("std",names(MergedSet))]#
+
+names(df)#
+
+df <- MergedSet[, grep("mean",names(MergedSet), ignore.case=TRUE)|grep("std",names(MergedSet), ignore.case=TRUE)]#
+
+df <- MergedSet[, grep("mean",names(MergedSet), ignore.case=TRUE)]#
+
+names(df)#
+
+df <- MergedSet[, grep("mean|std",names(MergedSet), ignore.case=TRUE)]#
+
+names(df)#
+
+ncol(df)#
+
+length(names(MergedSet))#
+
+MergedSet <- MergedSet[, grep("mean|std",names(MergedSet), ignore.case=TRUE)]#
+
+length(names(MergedSet))#
+
+names(TrainingSet)#
+
+names(MergedSet)#
+
+length(names(MergedSet))#
+
+MergedSet <- merge(TrainingSet,TestSet)#
+
+length(names(MergedSet))#
+
+norw(TrainingSet)#
+
+nrow(TrainingSet)+nrow(TestSet)#
+
+nrow(MergedSet)#
+
+MergedSet#
+
+MergedSet <- merge(TrainingSet,TestSet,all=TRUE)#
+
+nrow(MergedSet)#
+
+head(MergedSet)#
+
+names(grep("mean|std",names(MergedSet), ignore.case=TRUE))#
+
+grep("mean|std",names(MergedSet), ignore.case=TRUE)#
+
+grep(c("mean|std","subject",names(MergedSet), ignore.case=TRUE)#
+
+)#
+
+names(MergedSet[, grep("mean|std",names(MergedSet), ignore.case=TRUE)])#
+
+names(c(MergedSet[, grep("mean|std",names(MergedSet), ignore.case=TRUE)]))#
+
+names(c(MergedSet[, grep("mean|std",names(MergedSet), ignore.case=TRUE)]),"partitionVar","subject","activity.label")#
+
+names(MergedSet[, c("partitionVar","subject","activity.label", grep("mean|std",names(MergedSet), ignore.case=TRUE)])#
+
+names(MergedSet[, c("partitionVar","subject","activity.label", grep("mean|std",names(MergedSet), ignore.case=TRUE))])#
+
+names(MergedSet[, c("MergedSet$partitionVar","MergedSet$subject","MergedSet$activity.label", grep("mean|std",names(MergedSet), ignore.case=TRUE))])#
+
+names(MErgedSet[,1])#
+
+names(MergedSet[,1])#
+#
+
+names(MergedSet[,subject])#
+
+MergedSet[,subject]#
+
+MergedSet[,"subject"]#
+#
+
+names(MergedSet[,"subject"])#
+
+MergedSet[,c("subject","partitionVar"]#
+#
+#
+
+MergedSet[,c("subject","partitionVar"])#
+
+MergedSet[,c("subject","partitionVar")]#
+#
+
+MergedSet[, c("partitionVar","subject","activity.label")]#
+
+head(MergedSet[, c("partitionVar","subject","activity.label")])#
+
+head(MergedSet[, c("partitionVar","subject","activity.label", grep("mean|std",names(MergedSet), ignore.case=TRUE)))])#
+
+head(MergedSet[, c("partitionVar","subject","activity.label", grep("mean|std",names(MergedSet), ignore.case=TRUE))])#
+
+grep("mean|std",names(MergedSet), ignore.case=TRUE))#
+
+grep(c("mean|std","subject",names(MergedSet), ignore.case=TRUE))#
+
+grep("mean|std",names(MergedSet), ignore.case=TRUE)#
+
+nrow(MergedSet)#
+
+ncol(MergedSet)#
+
+ReducedMergedSet <- MergedSet[, grep("mean|std",names(MergedSet), ignore.case=TRUE)]#
+
+ncol(ReducedMergedSet)#
+
+ReducedMergedSet$partitionVar <- MergedSet$partitionVar#
+
+ncol(ReducedMergedSet)#
+
+ReducedMergedSet$subject <- MergedSet$subject#
+
+ReducedMergedSet$activity.label <- MergedSet$activity.label#
+
+summary(ReducedMergedSet$activity.label)#
+
+str(ReducedMergedSet$activity.label)#
+
+ActivityFileLocation = "activity_labels.txt"#
+
+Activity.Names <- read.table (ActivityFileLocation, col.names=c("index","Activity.Names"),colClasses=c("NULL","character"))#
+
+Activity.Names#
+
+df <- ReducedMergedSet$activity.label#
+
+df#
+
+class(df)#
+
+?factor#
+
+sum(ReducedMergedSet$activity.label==1)#
+
+sum(ReducedMergedSet$activity.label==seq(1:6))#
+
+sapplY(sum(ReducedMergedSet$activity.label==seq(1:6)))#
+#
+
+sapply(sum(ReducedMergedSet$activity.label==seq(1:6)))#
+
+sum(ReducedMergedSet$activity.label==1)#
+
+sum(ReducedMergedSet$activity.label==2)#
+#
+
+sum(ReducedMergedSet$activity.label==3)#
+
+sum(ReducedMergedSet$activity.label==4)#
+
+sum(ReducedMergedSet$activity.label==5)#
+#
+
+sum(ReducedMergedSet$activity.label==6)#
+
+nrow(Activity.Names)#
+
+1:nrow(Activity.Names)#
+
+class(ReducedMergedSet$activity.label)#
+
+ReducedMergedSet$activity.label <- factor(ReducedMergedSet$activity.label,levels = 1:nrow(Activity.Names),labels = Activity.Names)#
+
+class(ReducedMergedSet$activity.label)#
+
+ReducedMergedSet$activity.label#
+
+df <- sample(1:6,10)#
+
+df <- sample(1:6,10, replace=TRUE)#
+
+df#
+
+class(df)#
+
+Activity.Names#
+
+class(Activity.Names)#
+
+df <- factor(df,levels = c(1,2,3,4,5,6),labels = Activity.Names[,1])#
+
+df#
+
+df <- sample(1:6,10, replace=TRUE)#
+
+df#
+
+df <- factor(df,levels = 1:nrow(Activity.Names),labels = Activity.Names[,1])#
+
+df#
+
+ReducedMergedSet$activity.label <- factor(ReducedMergedSet$activity.label,levels = 1:nrow(Activity.Names),labels = Activity.Names[,1])#
+
+ ReducedMergedSet$activity.label#
+
+ReducedMergedSet <- MergedSet[, grep("mean|std",names(MergedSet), ignore.case=TRUE)]#
+
+ReducedMergedSet$partitionVar <- MergedSet$partitionVar#
+#
+
+ReducedMergedSet$subject <- MergedSet$subject#
+#
+
+ReducedMergedSet$activity.label <- MergedSet$activity.label#
+#
+
+ReducedMergedSet$activity.label <- factor(ReducedMergedSet$activity.label,levels = 1:nrow(Activity.Names),labels = Activity.Names[,1])#
+#
+
+ ReducedMergedSet$activity.label#
+
+summary(ReducedMergedSet$activity.label)#
+
+names(ReducedMergedSet)#
+
+grep("mean|std",names(MergedSet), ignore.case=TRUE)#
+
+names(grep("mean|std",names(MergedSet), ignore.case=TRUE))#
+
+names(ReducedMergedSet[,grep("mean|std",names(ReducedMergedSet), ignore.case=TRUE)])#
+#
+
+?melt#
+
+library(reshape2)#
+
+?melt#
+#
+
+TidyDataSet <- melt(ReducedMergedSet,id=idVar, measure.vars=measureVar)#
+
+idVar <- c("subject","activity.label")#
+#
+
+measureVar <- names(ReducedMergedSet[,grep("mean|std",names(ReducedMergedSet), ignore.case=TRUE)])#
+#
+
+TidyDataSet <- melt(ReducedMergedSet,id=idVar, measure.vars=measureVar)#
+#
+
+head(TidyDataSet)#
+
+tail(TidyDataSet)#
+
+?dcast#
+
+df <- dcast(TidyDataSet),subject - variable, mean)#
+
+df <- dcast(TidyDataSet,subject - variable, mean)#
+#
+
+df <- dcast(TidyDataSet, subject - variable, mean)#
+
+names(TidyDataSet)#
+
+df <- dcast(TidyDataSet, "subject" - variable, mean)#
+#
+
+df <- dcast(TidyDataSet, mean)#
+#
+#
+
+df <- dcast(TidyDataSet, "subject" ~ variable, mean)#
+#
+#
+
+df#
+
+head(df)#
+
+head(TidyDataSet)#
+
+df <- dcast(TidyDataSet, subject ~ variable, mean)#
+
+head(df)#
+
+df#
+
+df <- dcast(TidyDataSet, idVar ~ variable, mean)#
+
+head(df)#
+
+df#
+
+tapply(TidyDataSet$subject,mean)#
+
+head(TidyDataSet)#
+
+names(TidyDataSet)#
+
+tapply(TidyDataSet$value,TidyDataSet$subject,mean)#
+
+tapply(TidyDataSet$value,TidyDataSet$variable,TidyDataSet$subject,mean)#
+#
+
